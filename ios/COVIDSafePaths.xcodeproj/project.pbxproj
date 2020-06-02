@@ -118,6 +118,12 @@
 		C53FD0B824719AD1006D3268 /* IBMPlexSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1423A22FF9E04F88BEEE42D6 /* IBMPlexSans-Thin.ttf */; };
 		C53FD0B924719AD1006D3268 /* IBMPlexSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF7D8132928346A2904ED363 /* IBMPlexSans-ThinItalic.ttf */; };
 		C53FD0BA24719AD1006D3268 /* IBMPlexSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89D241005D9647C4B0586127 /* IBMPlexSans.ttf */; };
+		C58463DC2486C49A00BCB842 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463DB2486C49A00BCB842 /* LocalStore.swift */; };
+		C58463E02486C4BA00BCB842 /* Exposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463DF2486C4BA00BCB842 /* Exposure.swift */; };
+		C58463E22486C4DD00BCB842 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463E12486C4DD00BCB842 /* TestResult.swift */; };
+		C58463E42486C51100BCB842 /* ExposureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463E32486C51100BCB842 /* ExposureManager.swift */; };
+		C584640C2486F39400BCB842 /* PTCExposureNotificationEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C584640B2486F39400BCB842 /* PTCExposureNotificationEventEmitter.swift */; };
+		C58464102486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */; };
 		C5850A64247D5A41007A596B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5850A63247D5A41007A596B /* Images.xcassets */; };
 		C5AA24D824768FFF00BA0A99 /* COVIDSafePathsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* COVIDSafePathsTests.m */; };
 		C5C850C7248014F700A494CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C850C6248014F700A494CA /* main.m */; };
@@ -302,6 +308,12 @@
 		C53FD0C224719AD2006D3268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C53FD116247454EA006D3268 /* COVIDSafePaths.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = COVIDSafePaths.entitlements; path = BTE/COVIDSafePaths.entitlements; sourceTree = "<group>"; };
 		C56190A12485332E009A6756 /* BTE-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BTE-Bridging-Header.h"; sourceTree = "<group>"; };
+		C58463DB2486C49A00BCB842 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		C58463DF2486C4BA00BCB842 /* Exposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exposure.swift; sourceTree = "<group>"; };
+		C58463E12486C4DD00BCB842 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
+		C58463E32486C51100BCB842 /* ExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureManager.swift; sourceTree = "<group>"; };
+		C584640B2486F39400BCB842 /* PTCExposureNotificationEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTCExposureNotificationEventEmitter.swift; sourceTree = "<group>"; };
+		C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTCExposureNotificationEventEmitter.m; sourceTree = "<group>"; };
 		C5850A63247D5A41007A596B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5AA24E124768FFF00BA0A99 /* BTETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5AA24E224768FFF00BA0A99 /* BTETestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BTETestsInfo.plist; path = "/Users/johnschoeman/workspace/thoughtbot/covid-safe-paths/ios/BTETestsInfo.plist"; sourceTree = "<absolute>"; };
@@ -685,6 +697,12 @@
 				C53FD0C224719AD2006D3268 /* Info.plist */,
 				C5850A63247D5A41007A596B /* Images.xcassets */,
 				C56190A12485332E009A6756 /* BTE-Bridging-Header.h */,
+				C58463DB2486C49A00BCB842 /* LocalStore.swift */,
+				C58463DF2486C4BA00BCB842 /* Exposure.swift */,
+				C58463E12486C4DD00BCB842 /* TestResult.swift */,
+				C58463E32486C51100BCB842 /* ExposureManager.swift */,
+				C584640B2486F39400BCB842 /* PTCExposureNotificationEventEmitter.swift */,
+				C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */,
 			);
 			path = BTE;
 			sourceTree = "<group>";
@@ -1175,8 +1193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58463E42486C51100BCB842 /* ExposureManager.swift in Sources */,
+				C58463E22486C4DD00BCB842 /* TestResult.swift in Sources */,
+				C58463E02486C4BA00BCB842 /* Exposure.swift in Sources */,
 				C5C850CA2480156200A494CA /* AppDelegate.m in Sources */,
 				C5C850C7248014F700A494CA /* main.m in Sources */,
+				C58464102486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m in Sources */,
+				C58463DC2486C49A00BCB842 /* LocalStore.swift in Sources */,
+				C584640C2486F39400BCB842 /* PTCExposureNotificationEventEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1945,6 +1969,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 79Z8HUPGC3;
 				INFOPLIST_FILE = BTE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1979,6 +2004,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 79Z8HUPGC3;
 				INFOPLIST_FILE = BTE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2013,6 +2039,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 79Z8HUPGC3;
 				INFOPLIST_FILE = BTE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2046,6 +2073,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 79Z8HUPGC3;
 				INFOPLIST_FILE = BTE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2069,6 +2097,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0AA00174D067CC708D445BC1 /* Pods-BTETests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 79Z8HUPGC3;
@@ -2101,6 +2130,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F9475E01B42150CFCF453D52 /* Pods-BTETests.staging.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 79Z8HUPGC3;
@@ -2133,6 +2163,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C73DA2257D3A75481B746C2 /* Pods-BTETests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -2161,6 +2192,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1360DEA45F2DC8248DFD3B91 /* Pods-BTETests.beta.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
