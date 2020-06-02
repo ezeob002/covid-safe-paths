@@ -1,4 +1,4 @@
-import BackgroundGeolocation from '@mauron85/react-native-background-geolocation';
+// import BackgroundGeolocation from '@mauron85/react-native-background-geolocation';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import { NativeModules, Platform } from 'react-native';
 import PushNotification from 'react-native-push-notification';

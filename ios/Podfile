@@ -50,13 +50,10 @@ def gps_pods
   pod 'RealmSwift', :modular_headers => true
 
   permissions_path = '../node_modules/react-native-permissions/ios'
-  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways.podspec"
+  # pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways.podspec"
 end
 
 def bte_pods
-  ### These should be removed in a future commit
-  permissions_path = '../node_modules/react-native-permissions/ios'
-  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways.podspec"
 end
 
 target 'GPS' do
