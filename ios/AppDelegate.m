@@ -15,6 +15,7 @@
 #import <RNCPushNotificationIOS.h>
 #import <UserNotifications/UserNotifications.h>
 #import <RNSplashScreen.h>
+#import <BTE-Swift.h>
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -34,6 +35,9 @@
 
   UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
   center.delegate = self;
+
+  // ExposureNotificationService
+  [[ExposureNotificationService shared] start];
 
   [RNSplashScreen showSplash:@"LaunchScreen" inRootView:rootView];
   // [REQUIRED] Register BackgroundFetch

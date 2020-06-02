@@ -7,11 +7,11 @@
 //
 
 import Foundation
-@objc(PTCExposureNotificationEventEmitter)
-class PTCExposureNotificationEventEmitter: RCTEventEmitter {
-  
-  override func supportedEvents() -> [String]! {
-    return ["onExposureNotificaitonStateUpdated"]
-  }
-}
+//@objc(PTCExposureNotificationEventEmitter)
+//class PTCExposureNotificationEventEmitter: RCTEventEmitter {
+//  
+//  override func supportedEvents() -> [String]! {
+//    return ["onExposureNotificaitonStateUpdated"]
+//  }
+//}
 

@@ -46,7 +46,7 @@ class ExposureManager {
         
         func finish(_ result: Result<([Exposure], Int), Error>) {
             
-            try? Server.shared.deleteDiagnosisKeyFile(at: localURLs)
+//            try? Server.shared.deleteDiagnosisKeyFile(at: localURLs)
             
             let success: Bool
             if progress.isCancelled {
@@ -72,64 +72,64 @@ class ExposureManager {
         }
         let nextDiagnosisKeyFileIndex = LocalStore.shared.nextDiagnosisKeyFileIndex
         
-        Server.shared.getDiagnosisKeyFileURLs(startingAt: nextDiagnosisKeyFileIndex) { result in
+//        Server.shared.getDiagnosisKeyFileURLs(startingAt: nextDiagnosisKeyFileIndex) { result in
             
-            let dispatchGroup = DispatchGroup()
-            var localURLResults = [Result<[URL], Error>]()
-            
-            switch result {
-            case let .success(remoteURLs):
-                for remoteURL in remoteURLs {
-                    dispatchGroup.enter()
-                    Server.shared.downloadDiagnosisKeyFile(at: remoteURL) { result in
-                        localURLResults.append(result)
-                        dispatchGroup.leave()
-                    }
-                }
-                
-            case let .failure(error):
-                finish(.failure(error))
-            }
-            dispatchGroup.notify(queue: .main) {
-                for result in localURLResults {
-                    switch result {
-                    case let .success(urls):
-                        localURLs.append(contentsOf: urls)
-                    case let .failure(error):
-                        finish(.failure(error))
-                        return
-                    }
-                }
-                Server.shared.getExposureConfiguration { result in
-                    switch result {
-                    case let .success(configuration):
-                        ExposureManager.shared.manager.detectExposures(configuration: configuration, diagnosisKeyURLs: localURLs) { summary, error in
-                            if let error = error {
-                                finish(.failure(error))
-                                return
-                            }
-                            let userExplanation = NSLocalizedString("USER_NOTIFICATION_EXPLANATION", comment: "User notification")
-                            ExposureManager.shared.manager.getExposureInfo(summary: summary!, userExplanation: userExplanation) { exposures, error in
-                                    if let error = error {
-                                        finish(.failure(error))
-                                        return
-                                    }
-                                    let newExposures = exposures!.map { exposure in
-                                        Exposure(date: exposure.date,
-                                                 duration: exposure.duration,
-                                                 totalRiskScore: exposure.totalRiskScore,
-                                                 transmissionRiskLevel: exposure.transmissionRiskLevel)
-                                    }
-                                    finish(.success((newExposures, nextDiagnosisKeyFileIndex + localURLs.count)))
-                            }
-                        }
-                        
-                    case let .failure(error):
-                        finish(.failure(error))
-                    }
-                }
-            }
-        }
+//            let dispatchGroup = DispatchGroup()
+//            var localURLResults = [Result<[URL], Error>]()
+//
+//            switch result {
+//            case let .success(remoteURLs):
+//                for remoteURL in remoteURLs {
+//                    dispatchGroup.enter()
+//                    Server.shared.downloadDiagnosisKeyFile(at: remoteURL) { result in
+//                        localURLResults.append(result)
+//                        dispatchGroup.leave()
+//                    }
+//                }
+//
+//            case let .failure(error):
+//                finish(.failure(error))
+//            }
+//            dispatchGroup.notify(queue: .main) {
+//                for result in localURLResults {
+//                    switch result {
+//                    case let .success(urls):
+//                        localURLs.append(contentsOf: urls)
+//                    case let .failure(error):
+//                        finish(.failure(error))
+//                        return
+//                    }
+//                }
+//                Server.shared.getExposureConfiguration { result in
+//                    switch result {
+//                    case let .success(configuration):
+//                        ExposureManager.shared.manager.detectExposures(configuration: configuration, diagnosisKeyURLs: localURLs) { summary, error in
+//                            if let error = error {
+//                                finish(.failure(error))
+//                                return
+//                            }
+//                            let userExplanation = NSLocalizedString("USER_NOTIFICATION_EXPLANATION", comment: "User notification")
+//                            ExposureManager.shared.manager.getExposureInfo(summary: summary!, userExplanation: userExplanation) { exposures, error in
+//                                    if let error = error {
+//                                        finish(.failure(error))
+//                                        return
+//                                    }
+//                                    let newExposures = exposures!.map { exposure in
+//                                        Exposure(date: exposure.date,
+//                                                 duration: exposure.duration,
+//                                                 totalRiskScore: exposure.totalRiskScore,
+//                                                 transmissionRiskLevel: exposure.transmissionRiskLevel)
+//                                    }
+//                                    finish(.success((newExposures, nextDiagnosisKeyFileIndex + localURLs.count)))
+//                            }
+//                        }
+//
+//                    case let .failure(error):
+//                        finish(.failure(error))
+//                    }
+//                }
+//            }
+//        }
         
         return progress
     }
@@ -141,9 +141,9 @@ class ExposureManager {
             } else {
                 // In this sample app, transmissionRiskLevel isn't set for any of the diagnosis keys. However, it is at this point that an app could
                 // use information accumulated in testResult to determine a transmissionRiskLevel for each diagnosis key.
-                Server.shared.postDiagnosisKeys(temporaryExposureKeys!) { error in
-                    completion(error)
-                }
+//                Server.shared.postDiagnosisKeys(temporaryExposureKeys!) { error in
+//                    completion(error)
+//                }
             }
         }
     }
@@ -154,9 +154,9 @@ class ExposureManager {
             if let error = error {
                 completion(error)
             } else {
-                Server.shared.postDiagnosisKeys(temporaryExposureKeys!) { error in
-                    completion(error)
-                }
+//                Server.shared.postDiagnosisKeys(temporaryExposureKeys!) { error in
+//                    completion(error)
+//                }
             }
         }
     }
