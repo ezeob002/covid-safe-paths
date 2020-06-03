@@ -5,7 +5,50 @@ const defaultHeaders = {
   accept: 'application/json',
 };
 
-export const postDiagnosisKeys = async () => {
+export type NetworkResponse<T, U = {}> = NetworkSuccess<T> | NetworkFailure<U>;
+
+interface NetworkSuccess<T> {
+  kind: 'success';
+  body: T;
+}
+
+interface NetworkFailure<U> {
+  kind: 'failure';
+  error: U;
+}
+
+interface DiagnosisKeys {}
+
+type ExposureNotificationError = UnknownError;
+
+interface UnknownError {
+  error: string;
+}
+
+interface Exposure {
+  date: Date;
+  duration: TimeInterval;
+  totalRiskScore: ENRiskScore;
+  transmissionRiskLevel: ENRiskLevel;
+}
+
+interface TestResult {
+  id: UUID; // A unique identifier for this test result
+  isAdded: boolean; // Whether the user completed the add positive diagnosis flow for this test result
+  dateAdministered: Date; // The date the test was administered
+  isShared: boolean; // Whether diagnosis keys were shared with the Health Authority for the purpose of notifying others
+}
+
+type Date = string;
+type TimeInterval = string;
+type ENRiskScore = number;
+type ENRiskLevel = number;
+type UUID = string;
+
+export const postDiagnosisKeys = async (): Promise<NetworkResponse<
+  DiagnosisKeys,
+  ExposureNotificationError
+>> => {
   const url = exposureNotificationServerUrl;
   const data = {
     foo: 'bar',
