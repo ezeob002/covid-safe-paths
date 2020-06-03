@@ -2,13 +2,17 @@ import Foundation
 import ExposureNotification
 import UserNotifications
 
-class ExposureManager {
+@objc(ExposureManager)
+final class ExposureManager: NSObject {
     
     static let shared = ExposureManager()
+
+    let exposureNotificationEventEmitter = PTCExposureNotificationEventEmitter()
     
     let manager = ENManager()
     
-    init() {
+  override init() {
+    super.init()
         manager.activate { _ in
             // Ensure exposure notifications are enabled if the app is authorized. The app
             // could get into a state where it is authorized, but exposure
@@ -26,9 +30,7 @@ class ExposureManager {
     deinit {
         manager.invalidate()
     }
-    
-    static let authorizationStatusChangeNotification = Notification.Name("ExposureManagerAuthorizationStatusChangedNotification")
-    
+
     var detectingExposures = false
     
     func detectExposures(completionHandler: ((Bool) -> Void)? = nil) -> Progress {
@@ -45,9 +47,9 @@ class ExposureManager {
         var localURLs = [URL]()
         
         func finish(_ result: Result<([Exposure], Int), Error>) {
-            
-//            try? Server.shared.deleteDiagnosisKeyFile(at: localURLs)
-            
+
+          exposureNotificationEventEmitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: localURLs.map { $0.absoluteString })
+
             let success: Bool
             if progress.isCancelled {
                 success = false
@@ -70,6 +72,7 @@ class ExposureManager {
             detectingExposures = false
             completionHandler?(success)
         }
+      
         let nextDiagnosisKeyFileIndex = LocalStore.shared.nextDiagnosisKeyFileIndex
         
 //        Server.shared.getDiagnosisKeyFileURLs(startingAt: nextDiagnosisKeyFileIndex) { result in

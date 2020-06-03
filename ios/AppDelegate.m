@@ -40,7 +40,6 @@
   [[ExposureNotificationService shared] start];
 
   [RNSplashScreen showSplash:@"LaunchScreen" inRootView:rootView];
-  // [REQUIRED] Register BackgroundFetch
   return YES;
 }
 
