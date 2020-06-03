@@ -14,9 +14,9 @@ import { Icons, Images } from '../../assets';
 import { Button } from '../../components/Button';
 import { Typography } from '../../components/Typography';
 import { Theme } from '../../constants/themes';
+import { useAssets } from '../../TracingStrategyAssets';
 import { MayoButton } from './MayoButton';
 import { styles } from './style';
-import { useAssets } from '../../TracingStrategyAssets';
 
 export const OffPage = () => {
   const { t } = useTranslation();
@@ -51,9 +51,7 @@ export const OffPage = () => {
             <Text style={styles.mainTextBelow}>
               {t('label.home_setting_off_header')}
             </Text>
-            <Typography style={styles.subheaderText}>
-              {offPageCta}
-            </Typography>
+            <Typography style={styles.subheaderText}>{offPageCta}</Typography>
             <Button
               label={offPageButton}
               onPress={() => navigation.navigate('SettingsScreen', {})}
