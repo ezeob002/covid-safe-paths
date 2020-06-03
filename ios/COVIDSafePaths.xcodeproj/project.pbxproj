@@ -126,6 +126,9 @@
 		C58463E22486C4DD00BCB842 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463E12486C4DD00BCB842 /* TestResult.swift */; };
 		C58463E42486C51100BCB842 /* ExposureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463E32486C51100BCB842 /* ExposureManager.swift */; };
 		C58464102486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */; };
+		C584643D2488164D00BCB842 /* PTCExposureNotificationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C584643C2488164D00BCB842 /* PTCExposureNotificationModule.m */; };
+		C584644024881E9100BCB842 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C584643F24881E9100BCB842 /* Counter.swift */; };
+		C584644324881EFE00BCB842 /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = C584644224881EFE00BCB842 /* Counter.m */; };
 		C5850A64247D5A41007A596B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5850A63247D5A41007A596B /* Images.xcassets */; };
 		C5AA24D824768FFF00BA0A99 /* COVIDSafePathsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* COVIDSafePathsTests.m */; };
 		C5C850C7248014F700A494CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C850C6248014F700A494CA /* main.m */; };
@@ -319,6 +322,10 @@
 		C58463E12486C4DD00BCB842 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		C58463E32486C51100BCB842 /* ExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureManager.swift; sourceTree = "<group>"; };
 		C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTCExposureNotificationEventEmitter.m; sourceTree = "<group>"; };
+		C584643C2488164D00BCB842 /* PTCExposureNotificationModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTCExposureNotificationModule.m; sourceTree = "<group>"; };
+		C584643E24881B2200BCB842 /* PTCExposureNotificationEventEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTCExposureNotificationEventEmitter.h; sourceTree = "<group>"; };
+		C584643F24881E9100BCB842 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		C584644224881EFE00BCB842 /* Counter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
 		C5850A63247D5A41007A596B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5AA24E124768FFF00BA0A99 /* BTETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5AA24E224768FFF00BA0A99 /* BTETestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BTETestsInfo.plist; path = "/Users/johnschoeman/workspace/thoughtbot/covid-safe-paths/ios/BTETestsInfo.plist"; sourceTree = "<absolute>"; };
@@ -562,6 +569,8 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				68EFB214248570C2003D84F3 /* Log.swift */,
 				B2A58212244CE76C000F39A6 /* Localizable.strings */,
+				C584643F24881E9100BCB842 /* Counter.swift */,
+				C584644224881EFE00BCB842 /* Counter.m */,
 			);
 			name = COVIDSafePaths;
 			sourceTree = "<group>";
@@ -1201,6 +1210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C584644324881EFE00BCB842 /* Counter.m in Sources */,
+				C584644024881E9100BCB842 /* Counter.swift in Sources */,
 				C58463E42486C51100BCB842 /* ExposureManager.swift in Sources */,
 				C58463E22486C4DD00BCB842 /* TestResult.swift in Sources */,
 				C58463E02486C4BA00BCB842 /* Exposure.swift in Sources */,

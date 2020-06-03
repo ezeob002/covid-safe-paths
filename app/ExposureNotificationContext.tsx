@@ -1,7 +1,8 @@
 /*global JSX*/
 import React, { createContext, useEffect, useState } from 'react';
 
-import {ExposureNotifications} from './services';
+{/* import * as ExposureNotifications from './exposureNotificationsNativeModule'; */}
+{/* import * as API from './exposureNotificationsAPI' */}
 
 interface ExposureNotificationsState {
   exposure: boolean
@@ -21,18 +22,17 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
   );
 
   useEffect(() => {
-    const subscriptionExposureNotification = ExposureNotifications.subscribeToExposureNotificationState(
-       ({exposure}: ExposureNotificationsState) => {
-        setExposureNotificationState(exposure);
-      },
-    );
+    console.log('mounting provider')
+
+
     return () => {
       subscriptionExposureNotification.remove();
+      subscriptionToDeleteDiagnosisKeyFile.remove()
     };
   }, []);
 
   return (
-    <ExposureNotificationsContext.Provider value={{ exposure: exposureNotificationState, }}>
+    <ExposureNotificationsContext.Provider value={{ exposure: exposureNotificationState }}>
       {children}
     </ExposureNotificationsContext.Provider>
   );
@@ -40,3 +40,17 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
 
 export { ExposureNotificationsProvider };
 export default ExposureNotificationsContext;
+
+    {/* const subscriptionExposureNotification = */}
+    {/*   ExposureNotifications.subscribeToExposureNotificationState( */}
+    {/*    ({exposure}: ExposureNotificationsState) => { */}
+    {/*      API.postDiagnosisKeys() */}
+    {/*     setExposureNotificationState(exposure); */}
+    {/*   }, */}
+    {/* ); */}
+    {/* const subscriptionToDeleteDiagnosisKeyFile = */}
+    {/*   ExposureNotifications.subscribeToDeleteDiagnosisKeyFile( */}
+    {/*   (foo) => { */}
+    {/*     console.log(foo) */}
+    {/*   } */}
+    {/* ) */}

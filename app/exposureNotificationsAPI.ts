@@ -1,3 +1,4 @@
+/*globals Response */
 const exposureNotificationServerUrl = 'https://example.com';
 
 const defaultHeaders = {
@@ -90,7 +91,9 @@ export const getExposureConfiguration = async () => {};
 
 export const verifyUniqueTestIdentifier = async () => {};
 
-const wrapResponseBody = async response => {
+const wrapResponseBody = async <T, U = {}>(
+  response: Response,
+): Promise<NetworkResponse<T, U>> => {
   try {
     const json = await response.json();
     if (response.ok) {
