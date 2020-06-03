@@ -1,7 +1,7 @@
 const exposureNotificationServerUrl = 'https://example.com';
 
 const defaultHeaders = {
-  'content-type': 'application/json',
+  'content-type': 'ampplication/json',
   accept: 'application/json',
 };
 
@@ -19,11 +19,7 @@ interface NetworkFailure<U> {
 
 interface DiagnosisKeys {}
 
-type ExposureNotificationError = UnknownError;
-
-interface UnknownError {
-  error: string;
-}
+type ExposureNotificationError = 'unknown';
 
 interface Exposure {
   date: Date;
