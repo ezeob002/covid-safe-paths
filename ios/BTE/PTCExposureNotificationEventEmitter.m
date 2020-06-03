@@ -1,19 +1,7 @@
-#import "PTCExposureNotificationEventEmitter.h"
+#import <Foundation/Foundation.h>
 
-@implementation PTCExposureNotificationEventEmitter
+#import "React/RCTBridgeModule.h"
+#import "React/RCTEventEmitter.h"
 
-- (instancetype)init
-{
-  self = [super init];
-  if (self) {
-    //
-  }
-  return self;
-}
-
-- (NSArray<NSString *> *)supportedEvents {
-  return @[@"deleteDiagnosisKeyFile"];
-}
-
+@interface RCT_EXTERN_MODULE(PTCExposureNotificationEventEmitter, RCTEventEmitter)
 @end
-
