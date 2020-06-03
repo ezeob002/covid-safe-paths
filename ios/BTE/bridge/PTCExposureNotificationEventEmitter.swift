@@ -7,10 +7,10 @@ class PTCExposureNotificationEventEmitter: RCTEventEmitter {
   
   override init() {
     super.init()
-    PTCExposureEventEmitter.emitter = self
+    PTCExposureNotificationEventEmitter.emitter = self
   }
   
   override func supportedEvents() -> [String]! {
-    return ["onExposureNotificaitonStateUpdated", "onDeleteDiagnosisFileKeys"]
+    return ["onExposureNotificationStateUpdated", "onRequestDeleteDiagnosisKeyFile"]
   }
 }

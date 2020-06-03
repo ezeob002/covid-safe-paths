@@ -6,8 +6,9 @@ const ExposureNotificationEvents = new NativeEventEmitter(
   NativeModules.PTCExposureNotificationEventEmitter,
 );
 
-const exposureNotificationModule = NativeModules.ExposureManagerModule;
-export const detectExposures = () => {
+const exposureNotificationModule = NativeModules.PTCExposureManagerModule;
+console.log('expModule', exposureNotificationModule);
+export const detectExposures = async () => {
   console.log('js side, calling detectExposures');
   exposureNotificationModule.detectExposures();
 };

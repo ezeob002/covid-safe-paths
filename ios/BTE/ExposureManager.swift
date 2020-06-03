@@ -46,9 +46,7 @@ final class ExposureManager: NSObject {
         
         func finish(_ result: Result<([Exposure], Int), Error>) {
 
-//          PTCExposureNotificationEventEmitter.emitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: localURLs.map { $0.absoluteString })
-          
-          PTCExposureNotificationEventEmitter.emitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: "foo")
+          PTCExposureNotificationEventEmitter.emitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: localURLs.map { $0.absoluteString })
 
             let success: Bool
             if progress.isCancelled {

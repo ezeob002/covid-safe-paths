@@ -74,7 +74,7 @@
 		B2A58219244CE80C000F39A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2A5821B244CE80C000F39A6 /* InfoPlist.strings */; };
 		B51F9B2E24870E36008D444E /* ExposureNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F9B2D24870E36008D444E /* ExposureNotificationService.swift */; };
 		B596C07024880B7000943B79 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596C06F24880B7000943B79 /* String+Extensions.swift */; };
-		B596C0722488127D00943B79 /* ExposureManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B596C0712488127D00943B79 /* ExposureManagerModule.m */; };
+		B596C0722488127D00943B79 /* PTCExposureManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B596C0712488127D00943B79 /* PTCExposureManagerModule.m */; };
 		BB916399F2D64D8D89249A05 /* IBMPlexSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D98D5DA5B77459FACDD673D /* IBMPlexSans-Light.ttf */; };
 		BEA401E86568452A9E8FF210 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C42F32AF52974EE8ADEE67B5 /* IBMPlexSans-Medium.ttf */; };
 		C53FD08B24719AD1006D3268 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08445F6724284A52008754AC /* UIKit.framework */; };
@@ -309,7 +309,7 @@
 		B3D0B8224679467D85423742 /* IBMPlexMono-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexMono-Italic.ttf"; path = "../app/assets/fonts/IBMPlexMono-Italic.ttf"; sourceTree = "<group>"; };
 		B51F9B2D24870E36008D444E /* ExposureNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureNotificationService.swift; sourceTree = "<group>"; };
 		B596C06F24880B7000943B79 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		B596C0712488127D00943B79 /* ExposureManagerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExposureManagerModule.m; sourceTree = "<group>"; };
+		B596C0712488127D00943B79 /* PTCExposureManagerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTCExposureManagerModule.m; sourceTree = "<group>"; };
 		BF6254720C1D4A3288ECE351 /* IBMPlexMono-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexMono-SemiBold.ttf"; path = "../shared/assets/fonts/IBMPlexMono-SemiBold.ttf"; sourceTree = "<group>"; };
 		C42F32AF52974EE8ADEE67B5 /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Medium.ttf"; path = "../shared/assets/fonts/IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
 		C53FD0C124719AD1006D3268 /* BTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -725,7 +725,7 @@
 			children = (
 				C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */,
 				C57BDFA124882BC600CE62B1 /* PTCExposureNotificationEventEmitter.swift */,
-				B596C0712488127D00943B79 /* ExposureManagerModule.m */,
+				B596C0712488127D00943B79 /* PTCExposureManagerModule.m */,
 			);
 			path = bridge;
 			sourceTree = "<group>";
@@ -1224,7 +1224,7 @@
 				C5C850CA2480156200A494CA /* AppDelegate.m in Sources */,
 				B596C07024880B7000943B79 /* String+Extensions.swift in Sources */,
 				C5C850C7248014F700A494CA /* main.m in Sources */,
-				B596C0722488127D00943B79 /* ExposureManagerModule.m in Sources */,
+				B596C0722488127D00943B79 /* PTCExposureManagerModule.m in Sources */,
 				C58464102486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m in Sources */,
 				B51F9B2E24870E36008D444E /* ExposureNotificationService.swift in Sources */,
 				C57BDFA224882BC600CE62B1 /* PTCExposureNotificationEventEmitter.swift in Sources */,

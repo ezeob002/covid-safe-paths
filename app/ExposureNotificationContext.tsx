@@ -25,17 +25,17 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
   useEffect(() => {
     console.log('mounting provider')
 
-    const subscriptionExposureNotification =
-      ExposureNotifications.subscribeToExposureNotificationState(
-       ({exposure}: ExposureNotificationsState) => {
-         {/* API.postDiagnosisKeys() */}
-        setExposureNotificationState(exposure);
-      },
-    );
+    {/* const subscriptionExposureNotification = */}
+    {/*   ExposureNotifications.subscribeToExposureNotificationState( */}
+    {/*    ({exposure}: ExposureNotificationsState) => { */}
+    {/*     setExposureNotificationState(exposure); */}
+    {/*   }, */}
+    {/* ); */}
+
     const subscriptionToDeleteDiagnosisKeyFile =
       ExposureNotifications.subscribeToDeleteDiagnosisKeyFile(
       (foo) => {
-        console.log(foo)
+        console.log("Got some event!:", foo)
       }
     )
 
@@ -47,8 +47,8 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
 
   return (
     <ExposureNotificationsContext.Provider value={{ exposure: exposureNotificationState }}>
-      <Button onPress={ExposureNotifications.detectExposures} title={"DETECT"} />
       {children}
+      <Button onPress={ExposureNotifications.detectExposures} title={"DETECT"} />
     </ExposureNotificationsContext.Provider>
   );
 };
