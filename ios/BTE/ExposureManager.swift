@@ -6,10 +6,7 @@ import UserNotifications
 final class ExposureManager: NSObject {
     
     @objc static let shared = ExposureManager()
-
-    let exposureNotificationEventEmitter = PTCExposureNotificationEventEmitter()
     
-
     let manager = ENManager()
     
   override init() {
@@ -49,7 +46,9 @@ final class ExposureManager: NSObject {
         
         func finish(_ result: Result<([Exposure], Int), Error>) {
 
-          exposureNotificationEventEmitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: localURLs.map { $0.absoluteString })
+//          PTCExposureNotificationEventEmitter.emitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: localURLs.map { $0.absoluteString })
+          
+          PTCExposureNotificationEventEmitter.emitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: "foo")
 
             let success: Bool
             if progress.isCancelled {

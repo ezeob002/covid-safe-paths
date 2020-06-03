@@ -704,6 +704,7 @@
 		C53FD0C324719C25006D3268 /* BTE */ = {
 			isa = PBXGroup;
 			children = (
+				C57BDFB124883EF400CE62B1 /* bridge */,
 				C5C850C92480156200A494CA /* AppDelegate.m */,
 				C5C850C6248014F700A494CA /* main.m */,
 				C53FD0C224719AD2006D3268 /* Info.plist */,
@@ -715,11 +716,18 @@
 				B51F9B2D24870E36008D444E /* ExposureNotificationService.swift */,
 				C58463E12486C4DD00BCB842 /* TestResult.swift */,
 				B596C06F24880B7000943B79 /* String+Extensions.swift */,
-				B596C0712488127D00943B79 /* ExposureManagerModule.m */,
-				C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */,
-				C57BDFA124882BC600CE62B1 /* PTCExposureNotificationEventEmitter.swift */,
 			);
 			path = BTE;
+			sourceTree = "<group>";
+		};
+		C57BDFB124883EF400CE62B1 /* bridge */ = {
+			isa = PBXGroup;
+			children = (
+				C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */,
+				C57BDFA124882BC600CE62B1 /* PTCExposureNotificationEventEmitter.swift */,
+				B596C0712488127D00943B79 /* ExposureManagerModule.m */,
+			);
+			path = bridge;
 			sourceTree = "<group>";
 		};
 		C5C850DD24804A0300A494CA /* Products */ = {
