@@ -74,7 +74,7 @@
 		B2A58219244CE80C000F39A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2A5821B244CE80C000F39A6 /* InfoPlist.strings */; };
 		B51F9B2E24870E36008D444E /* ExposureNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F9B2D24870E36008D444E /* ExposureNotificationService.swift */; };
 		B596C07024880B7000943B79 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596C06F24880B7000943B79 /* String+Extensions.swift */; };
-		B596C0722488127D00943B79 /* ExposureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B596C0712488127D00943B79 /* ExposureManager.m */; };
+		B596C0722488127D00943B79 /* ExposureManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B596C0712488127D00943B79 /* ExposureManagerModule.m */; };
 		BB916399F2D64D8D89249A05 /* IBMPlexSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D98D5DA5B77459FACDD673D /* IBMPlexSans-Light.ttf */; };
 		BEA401E86568452A9E8FF210 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C42F32AF52974EE8ADEE67B5 /* IBMPlexSans-Medium.ttf */; };
 		C53FD08B24719AD1006D3268 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08445F6724284A52008754AC /* UIKit.framework */; };
@@ -126,7 +126,6 @@
 		C58463E22486C4DD00BCB842 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463E12486C4DD00BCB842 /* TestResult.swift */; };
 		C58463E42486C51100BCB842 /* ExposureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58463E32486C51100BCB842 /* ExposureManager.swift */; };
 		C58464102486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */; };
-		C584643D2488164D00BCB842 /* PTCExposureNotificationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C584643C2488164D00BCB842 /* PTCExposureNotificationModule.m */; };
 		C584644024881E9100BCB842 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C584643F24881E9100BCB842 /* Counter.swift */; };
 		C584644324881EFE00BCB842 /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = C584644224881EFE00BCB842 /* Counter.m */; };
 		C5850A64247D5A41007A596B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5850A63247D5A41007A596B /* Images.xcassets */; };
@@ -310,7 +309,7 @@
 		B51F9B2D24870E36008D444E /* ExposureNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureNotificationService.swift; sourceTree = "<group>"; };
 		B596C0692488015100943B79 /* PTCExposureNotificationEventEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTCExposureNotificationEventEmitter.h; sourceTree = "<group>"; };
 		B596C06F24880B7000943B79 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		B596C0712488127D00943B79 /* ExposureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExposureManager.m; sourceTree = "<group>"; };
+		B596C0712488127D00943B79 /* ExposureManagerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExposureManagerModule.m; sourceTree = "<group>"; };
 		BF6254720C1D4A3288ECE351 /* IBMPlexMono-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexMono-SemiBold.ttf"; path = "../shared/assets/fonts/IBMPlexMono-SemiBold.ttf"; sourceTree = "<group>"; };
 		C42F32AF52974EE8ADEE67B5 /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Medium.ttf"; path = "../shared/assets/fonts/IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
 		C53FD0C124719AD1006D3268 /* BTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -322,8 +321,6 @@
 		C58463E12486C4DD00BCB842 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		C58463E32486C51100BCB842 /* ExposureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureManager.swift; sourceTree = "<group>"; };
 		C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTCExposureNotificationEventEmitter.m; sourceTree = "<group>"; };
-		C584643C2488164D00BCB842 /* PTCExposureNotificationModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTCExposureNotificationModule.m; sourceTree = "<group>"; };
-		C584643E24881B2200BCB842 /* PTCExposureNotificationEventEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTCExposureNotificationEventEmitter.h; sourceTree = "<group>"; };
 		C584643F24881E9100BCB842 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		C584644224881EFE00BCB842 /* Counter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
 		C5850A63247D5A41007A596B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -713,11 +710,11 @@
 				C56190A12485332E009A6756 /* BTE-Bridging-Header.h */,
 				C58463DB2486C49A00BCB842 /* LocalStore.swift */,
 				C58463DF2486C4BA00BCB842 /* Exposure.swift */,
-				B596C0712488127D00943B79 /* ExposureManager.m */,
+				C58463E32486C51100BCB842 /* ExposureManager.swift */,
 				B51F9B2D24870E36008D444E /* ExposureNotificationService.swift */,
 				C58463E12486C4DD00BCB842 /* TestResult.swift */,
 				B596C06F24880B7000943B79 /* String+Extensions.swift */,
-				C58463E32486C51100BCB842 /* ExposureManager.swift */,
+				B596C0712488127D00943B79 /* ExposureManagerModule.m */,
 				C584640F2486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m */,
 				B596C0692488015100943B79 /* PTCExposureNotificationEventEmitter.h */,
 			);
@@ -1218,7 +1215,7 @@
 				C5C850CA2480156200A494CA /* AppDelegate.m in Sources */,
 				B596C07024880B7000943B79 /* String+Extensions.swift in Sources */,
 				C5C850C7248014F700A494CA /* main.m in Sources */,
-				B596C0722488127D00943B79 /* ExposureManager.m in Sources */,
+				B596C0722488127D00943B79 /* ExposureManagerModule.m in Sources */,
 				C58464102486F3C200BCB842 /* PTCExposureNotificationEventEmitter.m in Sources */,
 				B51F9B2E24870E36008D444E /* ExposureNotificationService.swift in Sources */,
 				C58463DC2486C49A00BCB842 /* LocalStore.swift in Sources */,

@@ -1,7 +1,8 @@
 /*global JSX*/
 import React, { createContext, useEffect, useState } from 'react';
+import {Button} from "react-native"
 
-{/* import * as ExposureNotifications from './exposureNotificationsNativeModule'; */}
+import * as ExposureNotifications from './exposureNotificationsNativeModule';
 {/* import * as API from './exposureNotificationsAPI' */}
 
 interface ExposureNotificationsState {
@@ -24,6 +25,19 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
   useEffect(() => {
     console.log('mounting provider')
 
+    const subscriptionExposureNotification =
+      ExposureNotifications.subscribeToExposureNotificationState(
+       ({exposure}: ExposureNotificationsState) => {
+         {/* API.postDiagnosisKeys() */}
+        setExposureNotificationState(exposure);
+      },
+    );
+    const subscriptionToDeleteDiagnosisKeyFile =
+      ExposureNotifications.subscribeToDeleteDiagnosisKeyFile(
+      (foo) => {
+        console.log(foo)
+      }
+    )
 
     return () => {
       subscriptionExposureNotification.remove();
@@ -33,6 +47,7 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
 
   return (
     <ExposureNotificationsContext.Provider value={{ exposure: exposureNotificationState }}>
+      <Button onPress={ExposureNotifications.detectExposures} title={"DETECT"} />
       {children}
     </ExposureNotificationsContext.Provider>
   );
@@ -41,16 +56,3 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
 export { ExposureNotificationsProvider };
 export default ExposureNotificationsContext;
 
-    {/* const subscriptionExposureNotification = */}
-    {/*   ExposureNotifications.subscribeToExposureNotificationState( */}
-    {/*    ({exposure}: ExposureNotificationsState) => { */}
-    {/*      API.postDiagnosisKeys() */}
-    {/*     setExposureNotificationState(exposure); */}
-    {/*   }, */}
-    {/* ); */}
-    {/* const subscriptionToDeleteDiagnosisKeyFile = */}
-    {/*   ExposureNotifications.subscribeToDeleteDiagnosisKeyFile( */}
-    {/*   (foo) => { */}
-    {/*     console.log(foo) */}
-    {/*   } */}
-    {/* ) */}

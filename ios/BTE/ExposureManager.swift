@@ -5,14 +5,11 @@ import UserNotifications
 @objc(ExposureManager)
 final class ExposureManager: NSObject {
     
-    static let shared = ExposureManager()
-<<<<<<< HEAD
+    @objc static let shared = ExposureManager()
 
     let exposureNotificationEventEmitter = PTCExposureNotificationEventEmitter()
     
-=======
-    //let exposureNotificationEventEmitter = PTCExposureNotificationEventEmitter()
->>>>>>> 33f4b05... wip
+
     let manager = ENManager()
     
   override init() {
@@ -37,7 +34,7 @@ final class ExposureManager: NSObject {
 
     var detectingExposures = false
     
-    func detectExposures(completionHandler: ((Bool) -> Void)? = nil) -> Progress {
+    @objc func detectExposures(completionHandler: ((Bool) -> Void)? = nil) -> Progress {
         
         let progress = Progress()
         
@@ -51,16 +48,9 @@ final class ExposureManager: NSObject {
         var localURLs = [URL]()
         
         func finish(_ result: Result<([Exposure], Int), Error>) {
-<<<<<<< HEAD
 
           exposureNotificationEventEmitter.sendEvent(withName: String.deleteDiagnosisKeyFile, body: localURLs.map { $0.absoluteString })
 
-=======
-            
-//            try? Server.shared.deleteDiagnosisKeyFile(at: localURLs)
-//          try? exposureNotificationEventEmitter.sendEvent(localURLs.map { $0.absoluteUrl })
-            
->>>>>>> 33f4b05... wip
             let success: Bool
             if progress.isCancelled {
                 success = false
