@@ -164,6 +164,10 @@ Generating a release build is an optional step in the development process.
 
 Tests are ran automatically through Github actions - PRs are not able to be merged if there are tests that are failing.
 
+We are using husky to automate running validation and tests locally on a
+pre-push git hook. If you ever need to push code without running these scripts,
+you can pass the `--no-verify` flag on `git push`.
+
 ### Static Testing
 
 To run the static analysis tools:
