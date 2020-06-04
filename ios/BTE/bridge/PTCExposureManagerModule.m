@@ -14,9 +14,17 @@ RCT_EXPORT_METHOD(detectExposures)
 //  [[DJIConnectionManager shared] connectManager];
   [[ExposureManager shared] detectExposuresWithCompletionHandler:^(BOOL success) {
     if (success) {
-      NSLog(@"ZORG");
+      NSLog(@"-----------------------ZORG");
+    } else {
+      NSLog(@"-----------------------ARGZ");
     }
   }];
+}
+
+RCT_EXPORT_METHOD(ping)
+{
+//  [[DJIConnectionManager shared] connectManager];
+  [[ExposureManager shared] ping];
 }
 
 @end

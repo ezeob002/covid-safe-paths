@@ -12,6 +12,9 @@ export const detectExposures = async () => {
   console.log('js side, calling detectExposures');
   exposureNotificationModule.detectExposures();
 };
+export const ping = async () => {
+  exposureNotificationModule.ping();
+};
 
 console.log('ExposureNotificationsEvents', ExposureNotificationEvents);
 
@@ -36,9 +39,11 @@ export const subscribeToExposureNotificationState = (
 export const subscribeToDeleteDiagnosisKeyFile = (
   callback: (foo: string, urlString: string[]) => void,
 ) => {
+  console.log('subscribing to events');
   return ExposureNotificationEvents.addListener(
     'onRequestDeleteDiagnosisKeyFile',
     (urlStrings: string[]) => {
+      console.log('got urlstirngs', urlStrings);
       callback('callback to deleteDiagnosisKeyFile called', urlStrings);
     },
   );

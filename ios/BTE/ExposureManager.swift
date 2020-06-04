@@ -30,6 +30,10 @@ final class ExposureManager: NSObject {
     }
 
     var detectingExposures = false
+  
+   @objc func ping() {
+     PTCExposureNotificationEventEmitter.emitter.sendEvent(withName: "onRequestDeleteDiagnosisKeyFile", body: "pinged!")
+   }
     
     @objc func detectExposures(completionHandler: ((Bool) -> Void)? = nil) -> Progress {
         

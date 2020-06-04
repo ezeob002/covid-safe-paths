@@ -23,8 +23,6 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
   );
 
   useEffect(() => {
-    console.log('mounting provider')
-
     {/* const subscriptionExposureNotification = */}
     {/*   ExposureNotifications.subscribeToExposureNotificationState( */}
     {/*    ({exposure}: ExposureNotificationsState) => { */}
@@ -48,7 +46,8 @@ const ExposureNotificationsProvider = ({ children }: ExposureNotificationProvide
   return (
     <ExposureNotificationsContext.Provider value={{ exposure: exposureNotificationState }}>
       {children}
-      <Button onPress={ExposureNotifications.detectExposures} title={"DETECT"} />
+      <Button onPress={ExposureNotifications.ping} title={"PING"} />
+
     </ExposureNotificationsContext.Provider>
   );
 };
