@@ -43,9 +43,9 @@ const initialState: State = {
 
 // The 'request' property of this reducer is helpful metadata for showing loading / error cases
 // for displaying data.
-const healthcareAuthoritiesReducer = createReducer(initialState, builder =>
+const healthcareAuthoritiesReducer = createReducer(initialState, (builder) =>
   builder
-    .addCase(getHealthcareAuthorities_started, state => {
+    .addCase(getHealthcareAuthorities_started, (state) => {
       state.request.status = ApiStatus.STARTED;
       state.request.errorMessage = null;
     })

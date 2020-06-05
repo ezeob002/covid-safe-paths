@@ -23,7 +23,7 @@ const getHealthcareAuthorities_failure = createAction(
 );
 
 const getHealthcareAuthoritiesApi = async () => {
-  const yamlString = await fetch(AUTHORITIES_LIST_URL_MVP1).then(res =>
+  const yamlString = await fetch(AUTHORITIES_LIST_URL_MVP1).then((res) =>
     res.text(),
   );
   const { authorities } = Yaml.safeLoad(yamlString);
@@ -33,7 +33,7 @@ const getHealthcareAuthoritiesApi = async () => {
   return authorities;
 };
 
-const getHealthcareAuthoritiesAction = () => async dispatch => {
+const getHealthcareAuthoritiesAction = () => async (dispatch) => {
   dispatch(getHealthcareAuthorities_started());
   try {
     const healthcareAuthorities = await getHealthcareAuthoritiesApi();
