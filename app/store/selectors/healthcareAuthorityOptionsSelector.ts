@@ -1,4 +1,4 @@
-const healthcareAuthorityOptionsSelector = (state) =>
+const healthcareAuthorityOptionsSelector = (state: any) =>
   state.healthcareAuthorities.availableAuthorities;
 
 export default healthcareAuthorityOptionsSelector;
