@@ -21,7 +21,7 @@ interface ApiRequest {
 
 interface HealthcareAuthority {
   name: string;
-  bounds: object;
+  bounds: Record<string, unknown>;
   ingest_url: string;
   publish_url: string;
 }
