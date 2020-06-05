@@ -1,8 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
 import Yaml from 'js-yaml';
-import { Action } from 'redux';
-import { ThunkAction } from 'redux-thunk';
-import RNFetchBlob from 'rn-fetch-blob';
 
 import { AUTHORITIES_LIST_URL_MVP1 } from '../../../constants/authorities';
 
