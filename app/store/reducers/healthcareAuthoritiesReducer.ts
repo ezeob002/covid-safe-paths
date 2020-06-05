@@ -33,7 +33,7 @@ interface State {
 }
 
 const initialState: State = {
-  availableAuthorities: null,
+  availableAuthorities: [],
   selectedAuthorities: [],
   request: {
     status: ApiStatus.INITIAL,

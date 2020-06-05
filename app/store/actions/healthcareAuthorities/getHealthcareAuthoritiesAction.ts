@@ -30,7 +30,7 @@ const getHealthcareAuthoritiesApi = async () => {
   return authorities;
 };
 
-const getHealthcareAuthoritiesAction = () => async (dispatch) => {
+const getHealthcareAuthoritiesAction = () => async (dispatch: any) => {
   dispatch(getHealthcareAuthorities_started());
   try {
     const healthcareAuthorities = await getHealthcareAuthoritiesApi();
