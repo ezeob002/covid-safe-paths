@@ -1,4 +1,4 @@
-// eslint-disable @typescript-eslint/explicit-module-boundary-types
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { createAction } from '@reduxjs/toolkit';
 import Yaml from 'js-yaml';
 
